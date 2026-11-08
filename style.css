@@ -38,3 +38,396 @@ footer{border-top:1px solid var(--line);padding:20px 5vw;display:flex;justify-co
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
 @media (pointer:fine){.cursor{display:block}body:has(a:hover) .cursor{width:34px;height:34px;background:rgba(217,255,0,.08)}}
 @media(max-width:800px){.topbar{padding:0 20px;height:65px}.topbar nav{display:none}.ig-mini{font-size:8px;padding:8px}.hero{padding:65px 20px 30px;display:block}.hero-grid{inset:65px 20px 30px}.hero-copy{padding:12vh 0 0}.hero h1{font-size:clamp(70px,20vw,130px);letter-spacing:-3px}.hero-art{height:42vh;margin-top:-15px}.hero-art img{width:min(62%,320px)}.hero-label{right:4%;bottom:5%}.hero-bottom{left:20px;right:20px;font-size:7px}.intro,.work,.about,.skills,.contact{padding:95px 20px}.intro-layout{grid-template-columns:1fr;gap:40px}.section-head{display:block}.section-note{margin-top:25px}.work-grid{grid-template-columns:1fr;gap:55px}.project-wide{grid-column:auto}.about{grid-template-columns:1fr}.about-number{font-size:60px}.stats{grid-template-columns:1fr;gap:28px;margin-top:45px}.skill-list>div{grid-template-columns:35px 1fr;gap:8px}.skill-list small{grid-column:2}.skill-list strong{font-size:25px}.contact-links{flex-direction:column}.contact-links a{width:100%}footer{padding:18px 20px;gap:10px;flex-wrap:wrap}}
+/* ========================================
+   FASTINK STUDIO
+   PREMIUM SCROLL ANIMATION
+======================================== */
+
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-zoom {
+
+    opacity: 0;
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+/* Dari bawah */
+
+.reveal {
+
+    transform: translateY(55px);
+
+}
+
+
+/* Dari kiri */
+
+.reveal-left {
+
+    transform: translateX(-70px);
+
+}
+
+
+/* Dari kanan */
+
+.reveal-right {
+
+    transform: translateX(70px);
+
+}
+
+
+/* Zoom */
+
+.reveal-zoom {
+
+    transform: scale(.9);
+
+}
+
+
+/* Aktif */
+
+.reveal.show,
+.reveal-left.show,
+.reveal-right.show,
+.reveal-zoom.show {
+
+    opacity: 1;
+
+    transform:
+        translate3d(0,0,0)
+        scale(1);
+
+}
+
+
+/* ========================================
+   STAGGER PROJECT
+======================================== */
+
+.project:nth-child(2) {
+
+    transition-delay: .08s;
+
+}
+
+.project:nth-child(3) {
+
+    transition-delay: .16s;
+
+}
+
+.project:nth-child(4) {
+
+    transition-delay: .24s;
+
+}
+
+.project:nth-child(5) {
+
+    transition-delay: .32s;
+
+}
+
+.project:nth-child(6) {
+
+    transition-delay: .40s;
+
+}
+
+.project:nth-child(7) {
+
+    transition-delay: .48s;
+
+}
+
+
+/* ========================================
+   NAVBAR SCROLL
+======================================== */
+
+.topbar {
+
+    transition:
+        height .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.topbar.scrolled {
+
+    height: 64px;
+
+    background:
+        rgba(5,5,5,.94);
+
+    border-color:
+        #3a3a3a;
+
+}
+
+
+/* ========================================
+   ACTIVE NAVIGATION
+======================================== */
+
+.topbar nav a {
+
+    position: relative;
+
+}
+
+
+.topbar nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--accent);
+
+    transition:
+        width .3s ease;
+
+}
+
+
+.topbar nav a:hover::after,
+.topbar nav a.active::after {
+
+    width: 100%;
+
+}
+
+
+.topbar nav a.active {
+
+    color:
+        var(--fg);
+
+}
+
+
+/* ========================================
+   HERO PARALLAX
+======================================== */
+
+.hero-art {
+
+    transition:
+        transform .15s ease-out;
+
+    will-change:
+        transform;
+
+}
+
+
+.hero-ring {
+
+    transition:
+        transform .25s ease-out;
+
+    will-change:
+        transform;
+
+}
+
+
+/* ========================================
+   PROJECT IMAGE
+======================================== */
+
+.project-image {
+
+    transition:
+        transform .35s
+        cubic-bezier(.2,.8,.2,1);
+
+    will-change:
+        transform;
+
+}
+
+
+/* ========================================
+   BUTTON EFFECT
+======================================== */
+
+.button {
+
+    position: relative;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+}
+
+
+.button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        var(--accent);
+
+    transform:
+        translateX(-101%);
+
+    transition:
+        transform .35s
+        cubic-bezier(.2,.8,.2,1);
+
+    z-index: -1;
+
+}
+
+
+.button:hover::before {
+
+    transform:
+        translateX(0);
+
+}
+
+
+/* ========================================
+   CONTACT BUTTON
+======================================== */
+
+.contact-links a {
+
+    position: relative;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+}
+
+
+.contact-links a::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        var(--accent);
+
+    transform:
+        translateY(101%);
+
+    transition:
+        transform .35s
+        cubic-bezier(.2,.8,.2,1);
+
+    z-index: -1;
+
+}
+
+
+.contact-links a:hover::before {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-zoom {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+
+    }
+
+
+    .hero-art,
+    .hero-ring,
+    .project-image {
+
+        transition: none;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .hero-art {
+
+        transform: none !important;
+
+    }
+
+
+    .hero-ring {
+
+        transform: none !important;
+
+    }
+
+
+    .project-image {
+
+        transform: none !important;
+
+    }
+
+}
